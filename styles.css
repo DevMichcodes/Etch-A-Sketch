@@ -4,3 +4,17 @@ html{
 #myCanvas{
     border: 2px ridge black;
 }
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+#container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    align-self: flex-start;
+}
