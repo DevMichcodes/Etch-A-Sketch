@@ -1,0 +1,6 @@
+html{
+    background-image: url(images/background.jpg);
+}
+#myCanvas{
+    border: 2px ridge black;
+}
