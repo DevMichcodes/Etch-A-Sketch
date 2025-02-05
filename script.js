@@ -2,8 +2,8 @@ const canvas = document.getElementById('myCanvas');
 const ctx = canvas.getContext("2d");
 
 const canvasSize =500;
-const gridSize = 16;
-const cellSize = canvasSize/gridSize;
+let gridSize = 16;
+let cellSize = canvasSize/gridSize;
 
 ctx.strokeStyle = "black";
 ctx.lineWidth = 2;
@@ -75,3 +75,25 @@ const resetSketch = document.getElementById('resetButton');
     initialiseGridColor();
     drawGrid();
   });
+
+  //changing to different grid sizes
+
+  const inputNewGrid = document.getElementById('gridSizeInput');
+  const newGridButton = document.getElementById('resetGridSizeButton');
+      newGridButton.addEventListener('click', function(){
+
+        let newSize = parseInt(inputNewGrid.value);
+          // Ensure grid size is within the valid range (1 to 100)
+    if (newSize < 1) newSize = 1;
+    if (newSize > 100) newSize = 100;
+
+    gridSize = newSize;
+    cellSize = canvasSize / gridSize;
+
+
+    ctx.clearRect(0,0, canvas.width, canvas.height);
+    initialiseGridColor();
+    drawGrid();
+
+
+      });
