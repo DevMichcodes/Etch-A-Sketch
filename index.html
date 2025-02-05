@@ -10,6 +10,12 @@
     <script src="script.js" defer></script> 
 </head>
 <body>
+    <div id="changeSize">
+        <p>Would you like to change the grid size?</p>
+        <label for="gridSizeInput">Grid Size (Max: 100):</label>
+        <input type="number" id="gridSizeInput" value="16" min="1" max="100">
+        <button id="resetGridSizeButton">Reset Grid Size</button> 
+    </div>
     <button id="resetButton"> RESET </button>
     <div id="container"> 
         <canvas id="myCanvas" height="500px" width="500px"></canvas>
