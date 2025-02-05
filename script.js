@@ -32,7 +32,7 @@ drawGrid();
 //initializing grid color
 
 let gridColor = [];
-
+function initialiseGridColor(){
 for(i=0; i<gridSize; i++){
     gridColor[i]=[];
 
@@ -40,6 +40,8 @@ for(i=0; i<gridSize; i++){
     gridColor[i][j]= 'white';
 }
 }
+}
+initialiseGridColor();
 //colors for use
 
 const colors = ['blue', 'red', 'green', 'yellow', 'purple', 'orange'];
@@ -65,3 +67,11 @@ canvas.addEventListener('mousemove',function(e){
         ctx.strokeRect(xIndex * cellSize, yIndex * cellSize, cellSize, cellSize); // Redraw border
  }
 });
+//reset the sketch pad
+
+const resetSketch = document.getElementById('resetButton');
+  resetSketch.addEventListener('click',function(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+    initialiseGridColor();
+    drawGrid();
+  });
